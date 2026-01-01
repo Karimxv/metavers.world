@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metaverse.World | Discover the Future</title>
-<meta name="description" content="AI tools, gaming bonuses, Metaverse, and mobile app downloads">
+<title>Metaverse.World – Discover the Future</title>
+<meta name="description" content="AI tools, gaming bonuses, Metaverse, mobile apps">
 
 <style>
 /* ===== BACKGROUND ===== */
@@ -30,13 +30,13 @@ body{
 
 /* ===== LAYOUT ===== */
 .container{
-  max-width:950px;
+  max-width:1000px;
   margin:auto;
   padding:40px 20px;
 }
 
 h1{font-size:38px;margin-bottom:15px;color:#00ffe5;}
-p{opacity:.9;font-size:16px;}
+p{opacity:.9;font-size:16px;line-height:1.6;}
 
 /* ===== ARTICLES ===== */
 .article{
@@ -85,14 +85,7 @@ p{opacity:.9;font-size:16px;}
   100%{transform:scale(1)}
 }
 
-/* ===== FOOTER ===== */
-.footer{
-  margin:50px 0 20px;
-  font-size:12px;
-  opacity:.6;
-}
-
-/* ===== HEADER BUTTON DOWNLOAD ===== */
+/* ===== HEADER DOWNLOAD BUTTON ===== */
 .download-btn{
   display:inline-block;
   margin:20px 0;
@@ -111,15 +104,43 @@ p{opacity:.9;font-size:16px;}
   transform:scale(1.05);
 }
 
+/* ===== LANGUAGE TOGGLE ===== */
+.lang-toggle{
+  position:fixed;
+  top:15px;
+  right:15px;
+  background:#00e5ff;
+  color:#000;
+  padding:10px 18px;
+  border-radius:20px;
+  font-weight:bold;
+  cursor:pointer;
+  z-index:999;
+}
+.lang-toggle:hover{
+  background:#1fffff;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  margin:50px 0 20px;
+  font-size:12px;
+  opacity:.6;
+}
+
+/* ===== HIDE OTHER LANGUAGES ===== */
+.arabic, .french{display:none;}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>🌐 Metaverse.World</h1>
-  <p>Discover AI tools, gaming bonuses, and the future of Web3. Download our app for mobile now!</p>
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle" onclick="toggleLang()">EN / FR / AR</div>
 
+<div class="container english">
+  <h1>🌐 Metaverse.World</h1>
+  <p>Explore AI tools, gaming bonuses, and the future of Web3. Download our app for mobile now!</p>
   <a class="download-btn" href="https://example.com/app" target="_blank">📱 Download App</a>
 
   <!-- ARTICLE 1 -->
@@ -157,10 +178,95 @@ p{opacity:.9;font-size:16px;}
     <a class="cta" href="https://example.com/make-money" target="_blank">💰 Start Earning Now</a>
   </div>
 
-  <div class="footer">
-    © 2025 Metaverse.World – All rights reserved
-  </div>
+  <div class="footer">© 2025 Metaverse.World – All rights reserved</div>
 </div>
 
-</body>
-</html>
+<!-- ARABIC -->
+<div class="container arabic">
+  <h1>🌐 ميتافيرس وورلد</h1>
+  <p>استكشف أدوات الذكاء الاصطناعي، مكافآت الألعاب، ومستقبل Web3. حمل تطبيقنا على هاتفك الآن!</p>
+  <a class="download-btn" href="https://example.com/app" target="_blank">📱 حمل التطبيق</a>
+
+  <div class="article">
+    <h2>🤖 أفضل أدوات ذكاء اصطناعي</h2>
+    <p>الذكاء الاصطناعي يغير العالم. استكشف المساعدين الذكيين ومنشئي المحتوى والأدوات الموفرة للوقت.</p>
+    <a class="cta" href="https://example.com/ai-tools" target="_blank">🚀 جرب الآن</a>
+  </div>
+
+  <div class="article">
+    <h2>🎮 مكافآت ألعاب حصرية</h2>
+    <p>احصل على مكافآت الألعاب المحدودة لتعظيم تجربة اللعب عبر الإنترنت.</p>
+    <a class="cta" href="https://example.com/gaming" target="_blank">🎁 احصل على المكافأة</a>
+  </div>
+
+  <div class="article">
+    <h2>🕶️ دخول الميتافيرس</h2>
+    <p>الميتافيرس هو مستقبل الإنترنت. استكشف العوالم الافتراضية والأصول الرقمية والفرص اللامحدودة.</p>
+    <a class="cta" href="https://example.com/metaverse" target="_blank">🌍 استكشف الميتافيرس</a>
+  </div>
+
+  <div class="article">
+    <h2>💡 أفضل أدوات Web3</h2>
+    <p>اكتشف أفضل أدوات Web3 لإدارة الأصول الرقمية، وNFT، واستثماراتك في العملات الرقمية بكفاءة.</p>
+    <a class="cta" href="https://example.com/web3-tools" target="_blank">⚡ جرب الآن</a>
+  </div>
+
+  <div class="article">
+    <h2>📈 اكسب المال عبر الإنترنت</h2>
+    <p>تعلم طرق الربح عبر الإنترنت باستخدام AI وWeb3 ومنصات الألعاب. حوّل مهاراتك إلى أرباح حقيقية.</p>
+    <a class="cta" href="https://example.com/make-money" target="_blank">💰 ابدأ الآن</a>
+  </div>
+
+  <div class="footer">© 2025 Metaverse.World – جميع الحقوق محفوظة</div>
+</div>
+
+<!-- FRENCH -->
+<div class="container french">
+  <h1>🌐 Metaverse.World</h1>
+  <p>Découvrez les outils AI, bonus de jeux, et l’avenir du Web3. Téléchargez notre application mobile maintenant!</p>
+  <a class="download-btn" href="https://example.com/app" target="_blank">📱 Télécharger l'App</a>
+
+  <div class="article">
+    <h2>🤖 Meilleurs outils AI à essayer</h2>
+    <p>L’intelligence artificielle révolutionne le monde. Découvrez les assistants intelligents et créateurs de contenu AI.</p>
+    <a class="cta" href="https://example.com/ai-tools" target="_blank">🚀 Essayez maintenant</a>
+  </div>
+
+  <div class="article">
+    <h2>🎮 Bonus de jeux exclusifs</h2>
+    <p>Obtenez des bonus de jeu limités pour maximiser votre expérience de jeu en ligne.</p>
+    <a class="cta" href="https://example.com/gaming" target="_blank">🎁 Obtenez le bonus</a>
+  </div>
+
+  <div class="article">
+    <h2>🕶️ Entrez dans le Metaverse</h2>
+    <p>Le metaverse est le futur d’internet. Explorez des mondes virtuels et des actifs numériques.</p>
+    <a class="cta" href="https://example.com/metaverse" target="_blank">🌍 Explorer le Metaverse</a>
+  </div>
+
+  <div class="article">
+    <h2>💡 Meilleurs outils Web3</h2>
+    <p>Découvrez les meilleurs outils Web3 pour gérer vos actifs numériques et NFT efficacement.</p>
+    <a class="cta" href="https://example.com/web3-tools" target="_blank">⚡ Essayez Web3</a>
+  </div>
+
+  <div class="article">
+    <h2>📈 Gagnez de l’argent en ligne</h2>
+    <p>Apprenez à gagner en ligne avec AI, Web3 et plateformes de jeux. Transformez vos compétences en revenus.</p>
+    <a class="cta" href="https://example.com/make-money" target="_blank">💰 Commencez maintenant</a>
+  </div>
+
+  <div class="footer">© 2025 Metaverse.World – Tous droits réservés</div>
+</div>
+
+<script>
+function toggleLang(){
+  const en = document.querySelector('.english');
+  const ar = document.querySelector('.arabic');
+  const fr = document.querySelector('.french');
+
+  if(en.style.display !== 'block'){en.style.display='block'; ar.style.display='none'; fr.style.display='none';}
+  else if(ar.style.display !== 'block'){en.style.display='none'; ar.style.display='block'; fr.style.display='none';}
+  else{en.style.display='none'; ar.style.display='none'; fr.style.display='block';}
+}
+</script>
