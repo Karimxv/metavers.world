@@ -3,201 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metaverse World – Future Starts Here</title>
-<meta name="description" content="Explore the Metaverse: VR, AI, 3D Games, Web3. Download app, watch videos, read articles, and more!">
+<title>Metaverse.World – Future Starts Here</title>
+<meta name="description" content="Explore the Metaverse: VR, AI, 3D Games, Web3">
 
 <style>
-/* === خلفية داكنة جذابة === */
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: radial-gradient(circle at top, #1f2933, #000000);
-  color: #ffffff;
-  text-align: center;
-  transition: background 0.5s;
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+color:#fff;
+text-align:center;
+overflow-x:hidden;
 }
 
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 60px 20px;
+/* فيديو الخلفية */
+.video-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
 }
 
-h1 { font-size: 38px; margin-bottom: 10px; }
-p { font-size: 18px; opacity: 0.9; }
-
-.box {
-  background: rgba(255,255,255,0.08);
-  border-radius: 15px;
-  padding: 30px;
-  margin-top: 40px;
+/* طبقة تعتيم */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+z-index:-1;
 }
 
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 15px 30px;
-  background: #00e5ff;
-  color: #000;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background 0.3s;
-}
-.btn:hover { background: #1fffff; }
-
-input {
-  width: 80%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 20px;
-  border: none;
+.container{
+max-width:800px;
+margin:auto;
+padding:40px 15px;
 }
 
-.submit {
-  background: #00ff9c;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
+h1{font-size:32px;margin:10px 0}
+p{font-size:16px;opacity:.9}
+
+.box{
+background:rgba(255,255,255,.08);
+border-radius:12px;
+padding:20px;
+margin:25px 0;
+backdrop-filter: blur(6px);
 }
 
-.footer {
-  margin-top: 50px;
-  font-size: 13px;
-  opacity: 0.6;
+.btn{
+display:inline-block;
+margin:6px;
+padding:12px 25px;
+background:#00e5ff;
+color:#000;
+font-size:16px;
+font-weight:bold;
+text-decoration:none;
+border-radius:10px;
+transition:.3s;
+}
+.btn:hover{background:#1fffff}
+
+input{
+width:80%;
+padding:10px;
+margin:8px 0;
+border-radius:18px;
+border:none;
+outline:none;
 }
 
-/* === زر تبديل اللغة === */
-.lang-toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: #00e5ff;
-  color: #000;
-  padding: 10px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  z-index: 999;
+.submit{
+background:#00ff9c;
+border:none;
+padding:10px 25px;
+border-radius:18px;
+cursor:pointer;
+font-weight:bold;
 }
-.lang-toggle:hover { background: #1fffff; }
 
-/* عناصر العربية مخفية افتراضيًا */
-.arabic { display: none; }
+.footer{
+margin:35px 0 20px;
+font-size:12px;
+opacity:.6;
+}
 
-/* مساحة للإعلانات */
-.ads-box {
-  background: rgba(255,255,255,0.05);
-  border: 1px dashed #00e5ff;
-  padding: 20px;
-  margin: 30px 0;
-  border-radius: 15px;
+.lang-toggle{
+position:fixed;
+top:12px;
+right:12px;
+background:#00e5ff;
+color:#000;
+padding:8px 12px;
+border-radius:18px;
+cursor:pointer;
+font-weight:bold;
+z-index:999;
+}
+
+.arabic{display:none}
+
+.ads-box{
+background:rgba(255,255,255,.05);
+border:1px dashed #00e5ff;
+padding:15px;
+margin:20px 0;
+border-radius:12px;
+}
+
+img{
+max-width:250px;
+border-radius:12px;
+display:block;
+margin:15px auto;
 }
 </style>
 </head>
 
 <body>
 
-<!-- زر تبديل اللغة -->
+<!-- فيديو الخلفية -->
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
 <div class="lang-toggle" onclick="toggleLang()">العربية / EN</div>
 
-<!-- === الصفحة الإنجليزية === -->
+<!-- ENGLISH -->
 <div class="container english">
-  <h1>Metaverse.World</h1>
-  <p>Discover the future of Virtual Reality, AI Tools, 3D Games & Web3</p>
+<h1>Metaverse.World</h1>
+<p>Discover the future of Virtual Reality, AI Tools, 3D Games & Web3</p>
 
-  <!-- زر تحميل التطبيق -->
-  <a class="btn" href="#" target="_blank">Download App</a>
 
-  <!-- أزرار أربيتاج / CPA -->
-  <div class="box">
-    <h2>Earn & Explore 🚀</h2>
-    <a class="btn" href="#" target="_blank">Get AI Tools</a>
-    <a class="btn" href="#" target="_blank">Join Gaming Offers</a>
-    <a class="btn" href="#" target="_blank">Claim Bonuses</a>
-  </div>
+<a class="btn" href="#">Download App</a>
 
-  <!-- أزرار المقالات والفيديو -->
-  <div class="box">
-    <h2>Content Hub 📚🎥</h2>
-    <a class="btn" href="#" target="_blank">Read Articles</a>
-    <a class="btn" href="#" target="_blank">Watch Videos</a>
-  </div>
-
-  <!-- مساحة للإعلانات -->
-  <div class="ads-box">
-    <p>Advertisement / Sponsored Content</p>
-  </div>
-
-  <!-- فورم Email / WhatsApp -->
-  <div class="box">
-    <h2>📩 Get Early Access</h2>
-    <form action="#" method="GET" target="_blank">
-      <input type="email" name="email" placeholder="Email address" required><br>
-      <input type="text" name="whatsapp" placeholder="WhatsApp number"><br>
-      <button class="submit">Notify Me</button>
-    </form>
-  </div>
+<div class="box">
+<h2>Earn & Explore 🚀</h2>
+<a class="btn" href="#">AI Tools</a>
+<a class="btn" href="#">Gaming Offers</a>
+<a class="btn" href="#">Bonuses</a>
 </div>
 
-<!-- === الصفحة العربية === -->
+<div class="box">
+<h2>Content Hub 📚🎥</h2>
+<a class="btn" href="#">Articles</a>
+<a class="btn" href="#">Videos</a>
+</div>
+
+<div class="ads-box">Advertisement / Sponsored</div>
+
+<div class="box">
+<h2>📩 Get Early Access</h2>
+<form>
+<input type="email" placeholder="Email" required><br>
+<input type="text" placeholder="WhatsApp"><br>
+<button class="submit">Notify Me</button>
+</form>
+</div>
+</div>
+
+<!-- ARABIC -->
 <div class="container arabic">
-  <h1>ميتافيرس وورلد</h1>
-  <p>استكشف مستقبل الواقع الإفتراضي، أدوات الذكاء الإصطناعي، ألعاب 3D و Web3</p>
+<h1>ميتافيرس وورلد</h1>
+<p>استكشف مستقبل الواقع الافتراضي والذكاء الاصطناعي و Web3</p>
 
-  <!-- زر تحميل التطبيق -->
-  <a class="btn" href="#" target="_blank">تحميل التطبيق</a>
 
-  <!-- أزرار أربيتاج / CPA -->
-  <div class="box">
-    <h2>اكسب واستكشف 🚀</h2>
-    <a class="btn" href="#" target="_blank">احصل على أدوات الذكاء الاصطناعي</a>
-    <a class="btn" href="#" target="_blank">انضم لعروض الألعاب</a>
-    <a class="btn" href="#" target="_blank">استفد من البونص</a>
-  </div>
 
-  <!-- أزرار المقالات والفيديو -->
-  <div class="box">
-    <h2>مركز المحتوى 📚🎥</h2>
-    <a class="btn" href="#" target="_blank">اقرأ المقالات</a>
-    <a class="btn" href="#" target="_blank">شاهد الفيديوهات</a>
-  </div>
+<a class="btn" href="#">تحميل التطبيق</a>
 
-  <!-- مساحة للإعلانات -->
-  <div class="ads-box">
-    <p>إعلان / محتوى برعاية</p>
-  </div>
-
-  <!-- فورم Email / WhatsApp -->
-  <div class="box">
-    <h2>📬 اشترك ليصلك كل جديد</h2>
-    <form action="#" method="GET" target="_blank">
-      <input type="email" name="email" placeholder="البريد الإلكتروني" required><br>
-      <input type="text" name="whatsapp" placeholder="رقم واتساب"><br>
-      <button class="submit">إشعار</button>
-    </form>
-  </div>
+<div class="box">
+<h2>اكسب واستكشف 🚀</h2>
+<a class="btn" href="#">أدوات الذكاء الاصطناعي</a>
+<a class="btn" href="#">عروض الألعاب</a>
+<a class="btn" href="#">بونص</a>
 </div>
 
-<div class="footer">
-  © 2025 Metaverse.World – All Rights Reserved
+<div class="box">
+<h2>مركز المحتوى 📚🎥</h2>
+<a class="btn" href="#">مقالات</a>
+<a class="btn" href="#">فيديوهات</a>
 </div>
+
+<div class="ads-box">إعلان ممول</div>
+
+<div class="box">
+<h2>📬 اشترك</h2>
+<form>
+<input type="email" placeholder="البريد الإلكتروني" required><br>
+<input type="text" placeholder="واتساب"><br>
+<button class="submit">إشعار</button>
+</form>
+</div>
+</div>
+
+<div class="footer">© 2025 Metaverse.World</div>
 
 <script>
-function toggleLang() {
-  const english = document.querySelector('.english');
-  const arabic = document.querySelector('.arabic');
-  if(english.style.display === 'none') {
-    english.style.display = 'block';
-    arabic.style.display = 'none';
-  } else {
-    english.style.display = 'none';
-    arabic.style.display = 'block';
-  }
+function toggleLang(){
+document.querySelector('.english').style.display =
+document.querySelector('.english').style.display === 'none' ? 'block' : 'none';
+
+document.querySelector('.arabic').style.display =
+document.querySelector('.arabic').style.display === 'none' ? 'block' : 'none';
 }
 </script>
 
