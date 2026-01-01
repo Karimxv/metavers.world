@@ -3,335 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metaverse.World – Discover the Future</title>
-<meta name="description" content="AI tools, gaming bonuses, Metaverse, mobile apps">
+<title>Metaverse.World – Gaming Universe</title>
+<meta name="description" content="Explore the Metaverse: Gaming, AI Tools, Web3, VR, and futuristic apps.">
 
 <style>
-/* ===== FULL SCREEN BACKGROUND CANVAS ===== */
-body, html{
-  margin:0;
-  padding:0;
-  height:100%;
-  font-family:Arial, Helvetica, sans-serif;
-  color:#fff;
-  overflow-x:hidden;
-  text-align:center;
-  position:relative;
-  background:#0a0f1b;
+/* ===============================
+   RESET & BODY
+================================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+body, html{font-family:'Arial',sans-serif;color:#fff;text-align:center;overflow-x:hidden;background:#000;}
+a{text-decoration:none;}
+button{cursor:pointer;}
+
+/* ================================
+   VIDEO BACKGROUND
+================================= */
+#bgVideo{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  object-fit:cover;z-index:-3;filter:brightness(0.4);
+}
+.overlay{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.6);z-index:-2;
 }
 
-canvas{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-2;
+/* ================================
+   PARTICLES
+================================= */
+canvas#particles{
+  position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;
 }
 
-/* ===== CONTAINER ===== */
+/* ================================
+   CONTAINER
+================================= */
 .container{
-  max-width:1000px;
-  margin:auto;
-  padding:40px 20px;
-  position:relative;
-  z-index:1;
+  max-width:1200px;margin:auto;padding:60px 30px;position:relative;z-index:1;
 }
 
-/* ===== HEADER ===== */
-h1{font-size:38px;margin-bottom:15px;color:#00ffe5;}
-p{opacity:.9;font-size:16px;line-height:1.6;}
+/* ================================
+   HEADINGS
+================================= */
+h1{
+  font-size:50px;color:#00ffe5;text-shadow:0 0 15px #00ffe5,0 0 30px #00ff9c;
+  animation:neonGlow 2s ease-in-out infinite alternate;margin-bottom:20px;
+}
+@keyframes neonGlow{
+  from{text-shadow:0 0 15px #00ffe5,0 0 30px #00ff9c;}
+  to{text-shadow:0 0 25px #00fffc,0 0 50px #00ff9c;}
+}
+p{font-size:18px;line-height:1.8;margin-bottom:20px;opacity:.9;}
 
-/* ===== ARTICLES ===== */
+/* ================================
+   ARTICLES 3D HOVER
+================================= */
 .article{
-  background:rgba(255,255,255,.08);
-  border-radius:16px;
-  padding:30px;
-  margin:30px 0;
-  text-align:left;
-  backdrop-filter:blur(8px);
-  transition: transform .3s, box-shadow .3s;
+  background:rgba(255,255,255,0.05);border-radius:25px;padding:40px;margin:35px 0;
+  backdrop-filter:blur(12px);transition:transform .3s, box-shadow .3s;position:relative;overflow:hidden;
+  transform-style:preserve-3d;
 }
-
 .article:hover{
-  transform:scale(1.02);
-  box-shadow:0 10px 25px rgba(0,255,156,.3);
+  transform:rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow:0 0 35px rgba(0,255,156,0.7),0 0 60px rgba(0,255,156,0.5);
+}
+.article h2{font-size:28px;color:#00ff9c;margin-bottom:12px;text-shadow:0 0 10px #00ff9c;}
+.article p{color:#fff;font-size:16px;opacity:.95;line-height:1.6;}
+.article img{max-width:220px;border-radius:20px;display:block;margin:15px auto;animation:float 5s ease-in-out infinite;}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+  100%{transform:translateY(0);}
 }
 
-.article h2{
-  font-size:22px;
-  color:#00ff9c;
-  margin-bottom:10px;
-}
-
-/* ===== CTA BUTTON ===== */
+/* ================================
+   BUTTONS NEON
+================================= */
 .cta{
-  display:inline-block;
-  margin-top:15px;
-  padding:15px 35px;
-  background:#00ff9c;
-  color:#000;
-  font-weight:bold;
-  border-radius:30px;
-  text-decoration:none;
-  animation:pulse 1.5s infinite;
-  transition:background .3s, transform .3s;
+  display:inline-block;margin-top:20px;padding:16px 45px;
+  background:#00ff9c;color:#000;font-weight:bold;border-radius:35px;
+  animation:pulse 1.5s infinite;transition:all .3s;
+}
+.cta:hover{
+  background:#1affb0;transform:scale(1.05);
+  box-shadow:0 0 20px #00ff9c,0 0 40px #00ff9c;
 }
 
-.cta:hover{
-  background:#1affb0;
-  transform:scale(1.05);
+.download-btn{
+  display:inline-block;margin:25px 0;padding:22px 55px;
+  background:#00e5ff;color:#000;font-weight:bold;font-size:22px;border-radius:35px;
+  animation:pulse 1.5s infinite;transition:all .3s;
+}
+.download-btn:hover{
+  background:#1fffff;transform:scale(1.05);
+  box-shadow:0 0 25px #00e5ff,0 0 50px #00e5ff;
 }
 
 @keyframes pulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.06)}
-  100%{transform:scale(1)}
+  0%{transform:scale(1);}
+  50%{transform:scale(1.08);}
+  100%{transform:scale(1);}
 }
 
-/* ===== DOWNLOAD BUTTON ===== */
-.download-btn{
-  display:inline-block;
-  margin:20px 0;
-  padding:18px 40px;
-  background:#00e5ff;
-  color:#000;
-  font-weight:bold;
-  font-size:18px;
-  border-radius:30px;
-  text-decoration:none;
-  transition:background .3s, transform .3s;
-}
-
-.download-btn:hover{
-  background:#1fffff;
-  transform:scale(1.05);
-}
-
-/* ===== LANGUAGE TOGGLE ===== */
+/* ================================
+   LANGUAGE TOGGLE
+================================= */
 .lang-toggle{
-  position:fixed;
-  top:15px;
-  right:15px;
-  background:#00e5ff;
-  color:#000;
-  padding:10px 18px;
-  border-radius:20px;
-  font-weight:bold;
-  cursor:pointer;
-  z-index:999;
+  position:fixed;top:15px;right:15px;
+  background:#00e5ff;color:#000;padding:14px 22px;border-radius:25px;font-weight:bold;
+  cursor:pointer;z-index:999;transition:all .3s;
 }
-.lang-toggle:hover{
-  background:#1fffff;
-}
+.lang-toggle:hover{background:#1fffff;}
 
-/* ===== FOOTER ===== */
-.footer{
-  margin:50px 0 20px;
-  font-size:12px;
-  opacity:.6;
-}
-
-/* ===== HIDE OTHER LANGUAGES ===== */
-.arabic, .french{display:none;}
+/* ================================
+   FOOTER
+================================= */
+.footer{margin:60px 0 25px;font-size:13px;opacity:.6;}
+.arabic,.french{display:none;}
 </style>
 </head>
-
 <body>
 
-<!-- PARTICLES BACKGROUND -->
-<canvas id="bgCanvas"></canvas>
+<!-- VIDEO BACKGROUND -->
+<video id="bgVideo" autoplay muted loop playsinline>
+  <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<!-- PARTICLES CANVAS -->
+<canvas id="particles"></canvas>
 
 <!-- LANGUAGE TOGGLE -->
 <div class="lang-toggle" onclick="toggleLang()">EN / FR / AR</div>
 
 <div class="container english">
-  <h1>🌐 Metaverse.World</h1>
-  <p>Explore AI tools, gaming bonuses, and the future of Web3. Download our app for mobile now!</p>
-  <a class="download-btn" href="https://example.com/app" target="_blank">📱 Download App</a>
+<h1>🌐 Metaverse.World</h1>
+<p>Explore Gaming, AI, Web3, VR, and download our futuristic app!</p>
+<a class="download-btn" href="https://example.com/app" target="_blank">📱 Download App</a>
 
-  <div class="article">
-    <h2>🤖 Best AI Tools You Must Try</h2>
-    <p>Artificial Intelligence is revolutionizing the world. Explore smart assistants, AI content creators, and productivity boosters.</p>
-    <a class="cta" href="https://example.com/ai-tools" target="_blank">🚀 Unlock AI Tools Now</a>
-  </div>
-
-  <div class="article">
-    <h2>🎮 Exclusive Gaming Bonuses</h2>
-    <p>Claim limited-time gaming bonuses and rewards to maximize your online gaming experience.</p>
-    <a class="cta" href="https://example.com/gaming" target="_blank">🎁 Claim Bonus</a>
-  </div>
-
-  <div class="article">
-    <h2>🕶️ Enter the Metaverse</h2>
-    <p>The metaverse is the future of the internet. Explore virtual worlds, digital assets, and endless possibilities.</p>
-    <a class="cta" href="https://example.com/metaverse" target="_blank">🌍 Explore Metaverse</a>
-  </div>
-
-  <div class="article">
-    <h2>💡 Top Web3 Tools Today</h2>
-    <p>Discover the best Web3 tools to manage digital assets, NFTs, and crypto investments efficiently.</p>
-    <a class="cta" href="https://example.com/web3-tools" target="_blank">⚡ Try Web3 Tools</a>
-  </div>
-
-  <div class="article">
-    <h2>📈 Make Money Online</h2>
-    <p>Learn strategies to earn online with AI, Web3, and gaming platforms. Turn your skills into real profit.</p>
-    <a class="cta" href="https://example.com/make-money" target="_blank">💰 Start Earning Now</a>
-  </div>
-
-  <div class="footer">© 2025 Metaverse.World – All rights reserved</div>
+<!-- ================= 10 ARTICLES ================= -->
+<div class="article">
+<h2>🎮 Gaming Article 1</h2>
+<p>Explore the latest games and earn exclusive bonuses in virtual worlds.</p>
+<a class="cta" href="https://example.com/game1" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+1">
 </div>
 
-<!-- Arabic -->
+<div class="article">
+<h2>🎮 Gaming Article 2</h2>
+<p>Discover advanced strategies to level up your gaming experience.</p>
+<a class="cta" href="https://example.com/game2" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+2">
+</div>
+
+<div class="article">
+<h2>🎮 Gaming Article 3</h2>
+<p>Join online tournaments and win rare in-game rewards.</p>
+<a class="cta" href="https://example.com/game3" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+3">
+</div>
+
+<div class="article">
+<h2>🎮 Gaming Article 4</h2>
+<p>Learn tips from professional gamers to dominate your opponents.</p>
+<a class="cta" href="https://example.com/game4" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+4">
+</div>
+
+<div class="article">
+<h2>🎮 Gaming Article 5</h2>
+<p>Discover immersive VR games that take you into the metaverse.</p>
+<a class="cta" href="https://example.com/game5" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+5">
+</div>
+
+<div class="article">
+<h2>🎮 Gaming Article 6</h2>
+<p>Explore AI-driven game analytics for smarter gameplay.</p>
+<a class="cta" href="https://example.com/game6" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+6">
+</div>
+
+<div class="article">
+<h2>🎮 Gaming Article 7</h2>
+<p>Join multiplayer adventures and connect with gamers worldwide.</p>
+<a class="cta" href="https://example.com/game7" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+7">
+</div>
+
+<div class="article">
+<h2>🎮 Gaming Article 8</h2>
+<p>Discover blockchain games and earn crypto rewards.</p>
+<a class="cta" href="https://example.com/game8" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+8">
+</div>
+
+<div class="article">
+<h2>🎮 Gaming Article 9</h2>
+<p>Learn to create mods and enhance your gaming worlds.</p>
+<a class="cta" href="https://example.com/game9" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+9">
+</div>
+
+<div class="article">
+<h2>🎮 Gaming Article 10</h2>
+<p>Explore exclusive game releases and be the first to play.</p>
+<a class="cta" href="https://example.com/game10" target="_blank">Play Now</a>
+<img src="https://via.placeholder.com/220x140?text=Game+10">
+</div>
+
+<div class="footer">© 2026 Metaverse.World – All rights reserved</div>
+</div>
+
+<!-- ARABIC -->
 <div class="container arabic">
-  <h1>🌐 ميتافيرس وورلد</h1>
-  <p>استكشف أدوات الذكاء الاصطناعي، مكافآت الألعاب، ومستقبل Web3. حمل تطبيقنا على هاتفك الآن!</p>
-  <a class="download-btn" href="https://example.com/app" target="_blank">📱 حمل التطبيق</a>
-
-  <div class="article">
-    <h2>🤖 أفضل أدوات ذكاء اصطناعي</h2>
-    <p>الذكاء الاصطناعي يغير العالم. استكشف المساعدين الذكيين ومنشئي المحتوى والأدوات الموفرة للوقت.</p>
-    <a class="cta" href="https://example.com/ai-tools" target="_blank">🚀 جرب الآن</a>
-  </div>
-
-  <div class="article">
-    <h2>🎮 مكافآت ألعاب حصرية</h2>
-    <p>احصل على مكافآت الألعاب المحدودة لتعظيم تجربة اللعب عبر الإنترنت.</p>
-    <a class="cta" href="https://example.com/gaming" target="_blank">🎁 احصل على المكافأة</a>
-  </div>
-
-  <div class="article">
-    <h2>🕶️ دخول الميتافيرس</h2>
-    <p>الميتافيرس هو مستقبل الإنترنت. استكشف العوالم الافتراضية والأصول الرقمية والفرص اللامحدودة.</p>
-    <a class="cta" href="https://example.com/metaverse" target="_blank">🌍 استكشف الميتافيرس</a>
-  </div>
-
-  <div class="article">
-    <h2>💡 أفضل أدوات Web3</h2>
-    <p>اكتشف أفضل أدوات Web3 لإدارة الأصول الرقمية، وNFT، واستثماراتك في العملات الرقمية بكفاءة.</p>
-    <a class="cta" href="https://example.com/web3-tools" target="_blank">⚡ جرب الآن</a>
-  </div>
-
-  <div class="article">
-    <h2>📈 اكسب المال عبر الإنترنت</h2>
-    <p>تعلم طرق الربح عبر الإنترنت باستخدام AI وWeb3 ومنصات الألعاب. حوّل مهاراتك إلى أرباح حقيقية.</p>
-    <a class="cta" href="https://example.com/make-money" target="_blank">💰 ابدأ الآن</a>
-  </div>
-
-  <div class="footer">© 2025 Metaverse.World – جميع الحقوق محفوظة</div>
+<h1>🌐 ميتافيرس وورلد</h1>
+<p>استكشف الألعاب، الذكاء الاصطناعي، Web3، VR، وحمّل تطبيقنا!</p>
+<a class="download-btn" href="https://example.com/app" target="_blank">📱 حمل التطبيق</a>
 </div>
 
-<!-- French -->
+<!-- FRENCH -->
 <div class="container french">
-  <h1>🌐 Metaverse.World</h1>
-  <p>Découvrez les outils AI, bonus de jeux, et l’avenir du Web3. Téléchargez notre application mobile maintenant!</p>
-  <a class="download-btn" href="https://example.com/app" target="_blank">📱 Télécharger l'App</a>
-
-  <div class="article">
-    <h2>🤖 Meilleurs outils AI à essayer</h2>
-    <p>L’intelligence artificielle révolutionne le monde. Découvrez les assistants intelligents et créateurs de contenu AI.</p>
-    <a class="cta" href="https://example.com/ai-tools" target="_blank">🚀 Essayez maintenant</a>
-  </div>
-
-  <div class="article">
-    <h2>🎮 Bonus de jeux exclusifs</h2>
-    <p>Obtenez des bonus de jeu limités pour maximiser votre expérience de jeu en ligne.</p>
-    <a class="cta" href="https://example.com/gaming" target="_blank">🎁 Obtenez le bonus</a>
-  </div>
-
-  <div class="article">
-    <h2>🕶️ Entrez dans le Metaverse</h2>
-    <p>Le metaverse est le futur d’internet. Explorez des mondes virtuels et des actifs numériques.</p>
-    <a class="cta" href="https://example.com/metaverse" target="_blank">🌍 Explorer le Metaverse</a>
-  </div>
-
-  <div class="article">
-    <h2>💡 Meilleurs outils Web3</h2>
-    <p>Découvrez les meilleurs outils Web3 pour gérer vos actifs numériques et NFT efficacement.</p>
-    <a class="cta" href="https://example.com/web3-tools" target="_blank">⚡ Essayez Web3</a>
-  </div>
-
-  <div class="article">
-    <h2>📈 Gagnez de l’argent en ligne</h2>
-    <p>Apprenez à gagner en ligne avec AI, Web3 et plateformes de jeux. Transformez vos compétences en revenus.</p>
-    <a class="cta" href="https://example.com/make-money" target="_blank">💰 Commencez maintenant</a>
-  </div>
-
-  <div class="footer">© 2025 Metaverse.World – Tous droits réservés</div>
+<h1>🌐 Metaverse.World</h1>
+<p>Découvrez Gaming, AI, Web3, VR, et téléchargez notre app!</p>
+<a class="download-btn" href="https://example.com/app" target="_blank">📱 Télécharger App</a>
 </div>
 
 <script>
+// LANGUAGE TOGGLE
 function toggleLang(){
-  const en = document.querySelector('.english');
-  const ar = document.querySelector('.arabic');
-  const fr = document.querySelector('.french');
-
-  if(en.style.display !== 'block'){en.style.display='block'; ar.style.display='none'; fr.style.display='none';}
-  else if(ar.style.display !== 'block'){en.style.display='none'; ar.style.display='block'; fr.style.display='none';}
-  else{en.style.display='none'; ar.style.display='none'; fr.style.display='block';}
+  const en=document.querySelector('.english');
+  const ar=document.querySelector('.arabic');
+  const fr=document.querySelector('.french');
+  if(en.style.display!=='block'){en.style.display='block';ar.style.display='none';fr.style.display='none';}
+  else if(ar.style.display!=='block'){en.style.display='none';ar.style.display='block';fr.style.display='none';}
+  else{en.style.display='none';ar.style.display='none';fr.style.display='block';}
 }
 
-/* ===== PARTICLES JS ===== */
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-let particlesArray;
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-window.addEventListener('resize',function(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  init();
-});
-
+// PARTICLES
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let particlesArray=[];
 class Particle{
-  constructor(x,y,size,color,velocity){
-    this.x = x;
-    this.y = y;
-    this.size = size;
-    this.color = color;
-    this.velocity = velocity;
+  constructor(x,y,size,color){
+    this.x=x;this.y=y;this.size=size;this.color=color;
+    this.speedX=Math.random()*1-0.5;this.speedY=Math.random()*1-0.5;
   }
-  update(){
-    this.x += this.velocity.x;
-    this.y += this.velocity.y;
-    if(this.x<0 || this.x>canvas.width) this.velocity.x*=-1;
-    if(this.y<0 || this.y>canvas.height) this.velocity.y*=-1;
-    this.draw();
-  }
-  draw(){
-    ctx.fillStyle = this.color;
-    ctx.beginPath();
-    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-    ctx.fill();
-  }
+  update(){this.x+=this.speedX;this.y+=this.speedY;
+    if(this.x<0||this.x>canvas.width)this.speedX*=-1;
+    if(this.y<0||this.y>canvas.height)this.speedY*=-1;}
+  draw(){ctx.fillStyle=this.color;ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();}
 }
+function initParticles(){particlesArray=[];for(let i=0;i<200;i++){let size=Math.random()*3+1;let x=Math.random()*canvas.width;let y=Math.random()*canvas.height;let color='rgba(0,255,156,0.7)';particlesArray.push(new Particle(x,y,size,color));}}
+function animateParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particlesArray.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animateParticles);}
+initParticles();animateParticles();
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;initParticles();});
 
-function init(){
-  particlesArray=[];
-  let numberOfParticles = Math.floor(canvas.width/10);
-  for(let i=0;i<numberOfParticles;i++){
-    let size=Math.random()*3+1;
-    let x=Math.random()*canvas.width;
-    let y=Math.random()*canvas.height;
-    let color='rgba(0,255,156,0.7)';
-    let velocity={x:(Math.random()-0.5)/2, y:(Math.random()-0.5)/2};
-    particlesArray.push(new Particle(x,y,size,color,velocity));
-  }
-}
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  for(let i=0;i<particlesArray.length;i++){
-    particlesArray[i].update();
-  }
-  requestAnimationFrame(animate);
-}
-
-init();
-animate();
+// مكان لإضافة أكواد رفع النقرات أو التحليلات
 </script>
 
 </body>
