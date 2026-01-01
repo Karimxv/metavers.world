@@ -2,33 +2,29 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Metaverse World – Future Starts Here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metaverse World – Future Starts Here</title>
+<meta name="description" content="Explore the Metaverse: VR, AI, 3D Games, Web3. Download app, watch videos, read articles, and more!">
 
 <style>
+/* === خلفية داكنة جذابة === */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: radial-gradient(circle at top, #1f2933, #000000);
   color: #ffffff;
   text-align: center;
+  transition: background 0.5s;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
   padding: 60px 20px;
 }
 
-h1 {
-  font-size: 38px;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 18px;
-  opacity: 0.9;
-}
+h1 { font-size: 38px; margin-bottom: 10px; }
+p { font-size: 18px; opacity: 0.9; }
 
 .box {
   background: rgba(255,255,255,0.08);
@@ -39,18 +35,34 @@ p {
 
 .btn {
   display: inline-block;
-  margin-top: 25px;
-  padding: 15px 35px;
+  margin: 10px;
+  padding: 15px 30px;
   background: #00e5ff;
   color: #000;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   text-decoration: none;
   border-radius: 10px;
+  transition: background 0.3s;
+}
+.btn:hover { background: #1fffff; }
+
+input {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: none;
 }
 
-.btn:hover {
-  background: #1fffff;
+.submit {
+  background: #00ff9c;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .footer {
@@ -58,32 +70,136 @@ p {
   font-size: 13px;
   opacity: 0.6;
 }
+
+/* === زر تبديل اللغة === */
+.lang-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #00e5ff;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 999;
+}
+.lang-toggle:hover { background: #1fffff; }
+
+/* عناصر العربية مخفية افتراضيًا */
+.arabic { display: none; }
+
+/* مساحة للإعلانات */
+.ads-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px dashed #00e5ff;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 15px;
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- زر تبديل اللغة -->
+<div class="lang-toggle" onclick="toggleLang()">العربية / EN</div>
+
+<!-- === الصفحة الإنجليزية === -->
+<div class="container english">
   <h1>Metaverse.World</h1>
-  <p>Discover the future of Virtual Reality, AI & Web3</p>
+  <p>Discover the future of Virtual Reality, AI Tools, 3D Games & Web3</p>
 
+  <!-- زر تحميل التطبيق -->
+  <a class="btn" href="#" target="_blank">Download App</a>
+
+  <!-- أزرار أربيتاج / CPA -->
   <div class="box">
-    <h2>Explore the Metaverse 🌐</h2>
-    <p>
-      Learn about Metaverse projects, VR experiences,  
-      AI tools and Web3 platforms shaping the future.
-    </p>
-
-    <!-- رابط أربيتاج (CPA / Affiliate لاحقًا) -->
-    <a class="btn" href="#">
-      Explore Now
-    </a>
+    <h2>Earn & Explore 🚀</h2>
+    <a class="btn" href="#" target="_blank">Get AI Tools</a>
+    <a class="btn" href="#" target="_blank">Join Gaming Offers</a>
+    <a class="btn" href="#" target="_blank">Claim Bonuses</a>
   </div>
 
-  <div class="footer">
-    © 2025 Metaverse.World – All Rights Reserved
+  <!-- أزرار المقالات والفيديو -->
+  <div class="box">
+    <h2>Content Hub 📚🎥</h2>
+    <a class="btn" href="#" target="_blank">Read Articles</a>
+    <a class="btn" href="#" target="_blank">Watch Videos</a>
+  </div>
+
+  <!-- مساحة للإعلانات -->
+  <div class="ads-box">
+    <p>Advertisement / Sponsored Content</p>
+  </div>
+
+  <!-- فورم Email / WhatsApp -->
+  <div class="box">
+    <h2>📩 Get Early Access</h2>
+    <form action="#" method="GET" target="_blank">
+      <input type="email" name="email" placeholder="Email address" required><br>
+      <input type="text" name="whatsapp" placeholder="WhatsApp number"><br>
+      <button class="submit">Notify Me</button>
+    </form>
   </div>
 </div>
+
+<!-- === الصفحة العربية === -->
+<div class="container arabic">
+  <h1>ميتافيرس وورلد</h1>
+  <p>استكشف مستقبل الواقع الإفتراضي، أدوات الذكاء الإصطناعي، ألعاب 3D و Web3</p>
+
+  <!-- زر تحميل التطبيق -->
+  <a class="btn" href="#" target="_blank">تحميل التطبيق</a>
+
+  <!-- أزرار أربيتاج / CPA -->
+  <div class="box">
+    <h2>اكسب واستكشف 🚀</h2>
+    <a class="btn" href="#" target="_blank">احصل على أدوات الذكاء الاصطناعي</a>
+    <a class="btn" href="#" target="_blank">انضم لعروض الألعاب</a>
+    <a class="btn" href="#" target="_blank">استفد من البونص</a>
+  </div>
+
+  <!-- أزرار المقالات والفيديو -->
+  <div class="box">
+    <h2>مركز المحتوى 📚🎥</h2>
+    <a class="btn" href="#" target="_blank">اقرأ المقالات</a>
+    <a class="btn" href="#" target="_blank">شاهد الفيديوهات</a>
+  </div>
+
+  <!-- مساحة للإعلانات -->
+  <div class="ads-box">
+    <p>إعلان / محتوى برعاية</p>
+  </div>
+
+  <!-- فورم Email / WhatsApp -->
+  <div class="box">
+    <h2>📬 اشترك ليصلك كل جديد</h2>
+    <form action="#" method="GET" target="_blank">
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required><br>
+      <input type="text" name="whatsapp" placeholder="رقم واتساب"><br>
+      <button class="submit">إشعار</button>
+    </form>
+  </div>
+</div>
+
+<div class="footer">
+  © 2025 Metaverse.World – All Rights Reserved
+</div>
+
+<script>
+function toggleLang() {
+  const english = document.querySelector('.english');
+  const arabic = document.querySelector('.arabic');
+  if(english.style.display === 'none') {
+    english.style.display = 'block';
+    arabic.style.display = 'none';
+  } else {
+    english.style.display = 'none';
+    arabic.style.display = 'block';
+  }
+}
+</script>
 
 </body>
 </html>
