@@ -12,7 +12,17 @@ body, html{font-family:'Arial',sans-serif;color:#fff;text-align:center;overflow-
 a{text-decoration:none;}
 button{cursor:pointer;}
 
-#bgVideo{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-3;filter:brightness(0.4);}
+/* فيديو الخلفية */
+.video-bg {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-3;
+  filter:brightness(0.4);
+}
 .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:-2;}
 canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
 
@@ -28,7 +38,6 @@ p{font-size:18px;line-height:1.8;margin-bottom:20px;opacity:.9;}
 .article img{max-width:220px;border-radius:20px;display:block;margin:15px auto;animation:float 5s ease-in-out infinite;}
 @keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-15px);}100%{transform:translateY(0);}}
 
-
 .cta{display:inline-block;margin-top:20px;padding:16px 45px;background:#00ff9c;color:#000;font-weight:bold;border-radius:35px;animation:pulse 1.5s infinite;transition:all .3s;}
 .cta:hover{background:#1affb0;transform:scale(1.05);box-shadow:0 0 20px #00ff9c,0 0 40px #00ff9c;}
 .download-btn{display:inline-block;margin:25px 0;padding:22px 55px;background:#00e5ff;color:#000;font-weight:bold;font-size:22px;border-radius:35px;animation:pulse 1.5s infinite;transition:all .3s;}
@@ -41,7 +50,7 @@ p{font-size:18px;line-height:1.8;margin-bottom:20px;opacity:.9;}
 <body>
 
 <!-- فيديو الخلفية -->
-<video id="bgVideo" autoplay muted loop playsinline>
+<video class="video-bg" autoplay muted loop playsinline>
   <source src="video.mp4" type="video/mp4">
 </video>
 <div class="overlay"></div>
@@ -67,61 +76,7 @@ p{font-size:18px;line-height:1.8;margin-bottom:20px;opacity:.9;}
 <img src="https://via.placeholder.com/220x140?text=Game+2">
 </div>
 
-<div class="article">
-<h2>🎮 Gaming Article 3</h2>
-<p>Join online tournaments and win rare in-game rewards.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+3">
-</div>
-
-<div class="article">
-<h2>🎮 Gaming Article 4</h2>
-<p>Learn tips from professional gamers to dominate your opponents.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+4">
-</div>
-
-<div class="article">
-<h2>🎮 Gaming Article 5</h2>
-<p>Discover immersive VR games that take you into the metaverse.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+5">
-</div>
-
-<div class="article">
-<h2>🎮 Gaming Article 6</h2>
-<p>Explore AI-driven game analytics for smarter gameplay.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+6">
-</div>
-
-<div class="article">
-<h2>🎮 Gaming Article 7</h2>
-<p>Join multiplayer adventures and connect with gamers worldwide.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+7">
-</div>
-
-<div class="article">
-<h2>🎮 Gaming Article 8</h2>
-<p>Discover blockchain games and earn crypto rewards.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+8">
-</div>
-
-<div class="article">
-<h2>🎮 Gaming Article 9</h2>
-<p>Learn to create mods and enhance your gaming worlds.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+9">
-</div>
-
-<div class="article">
-<h2>🎮 Gaming Article 10</h2>
-<p>Explore exclusive game releases and be the first to play.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+10">
-</div>
+<!-- أضف باقي المقالات بنفس الطريقة -->
 
 <div class="footer">© 2026 Metaverse.World – All rights reserved</div>
 </div>
