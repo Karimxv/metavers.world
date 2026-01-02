@@ -3,129 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metaverse.World – Gaming Universe</title>
-<meta name="description" content="Explore the Metaverse: Gaming, AI Tools, Web3, VR, and futuristic apps.">
+<title>Metaverse.World – Future Starts Here</title>
+<meta name="description" content="Explore the Metaverse: VR, AI, 3D Games, Web3">
 
 <style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body, html {font-family:'Arial',sans-serif; color:#fff; text-align:center; overflow-x:hidden; height:100%; background:#000;}
-a {text-decoration:none;}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  text-align:center;
+  overflow-x:hidden;
+  height:100%;
+}
 
 /* فيديو الخلفية */
-.video-bg {
-  position: fixed;
+.video-bg{
+  position:fixed;
   top:0;
   left:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  z-index:-1; /* أقل من المحتوى */
-  filter: brightness(0.4);
-  background: black; /* يظهر إذا لم يحمل الفيديو */
+  z-index:-2;
+  background:black;
 }
 
-.container {
-  max-width:1200px;
+/* طبقة تعتيم */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.65);
+  z-index:-1;
+}
+
+.container{
+  max-width:800px;
   margin:auto;
-  padding:60px 30px;
+  padding:40px 15px;
   position:relative;
   z-index:1;
 }
 
-h1 {
-  font-size:50px;
-  color:#00ffe5;
-  text-shadow:0 0 15px #00ffe5, 0 0 30px #00ff9c;
-  animation: neonGlow 2s ease-in-out infinite alternate;
-  margin-bottom:20px;
+h1{font-size:32px;margin:10px 0}
+p{font-size:16px;opacity:.9}
+
+.box{
+  background:rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:20px;
+  margin:25px 0;
+  backdrop-filter: blur(6px);
 }
 
-@keyframes neonGlow {
-  from {text-shadow:0 0 15px #00ffe5, 0 0 30px #00ff9c;}
-  to   {text-shadow:0 0 25px #00fffc, 0 0 50px #00ff9c;}
-}
-
-p {font-size:18px; line-height:1.8; margin-bottom:20px; opacity:0.9;}
-
-.article {
-  background:rgba(255,255,255,0.05);
-  border-radius:25px;
-  padding:40px;
-  margin:35px 0;
-  backdrop-filter:blur(12px);
-  transition:transform .3s, box-shadow .3s;
-  position:relative;
-  overflow:hidden;
-}
-
-.article:hover {
-  transform:scale(1.03);
-  box-shadow:0 0 25px rgba(0,255,156,0.7);
-}
-
-.article h2 {
-  font-size:28px;
-  color:#00ff9c;
-  margin-bottom:12px;
-  text-shadow:0 0 10px #00ff9c;
-}
-
-.article p {
-  color:#fff;
+.btn{
+  display:inline-block;
+  margin:6px;
+  padding:12px 25px;
+  background:#00e5ff;
+  color:#000;
   font-size:16px;
-  opacity:.95;
-  line-height:1.6;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:10px;
+  transition:.3s;
+}
+.btn:hover{background:#1fffff}
+
+input{
+  width:80%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:18px;
+  border:none;
+  outline:none;
 }
 
-.article img {
-  max-width:220px;
-  border-radius:20px;
+.submit{
+  background:#00ff9c;
+  border:none;
+  padding:10px 25px;
+  border-radius:18px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.footer{
+  margin:35px 0 20px;
+  font-size:12px;
+  opacity:.6;
+}
+
+.ads-box{
+  background:rgba(255,255,255,.05);
+  border:1px dashed #00e5ff;
+  padding:15px;
+  margin:20px 0;
+  border-radius:12px;
+}
+
+img{
+  max-width:250px;
+  border-radius:12px;
   display:block;
   margin:15px auto;
 }
-
-.cta {
-  display:inline-block;
-  margin-top:20px;
-  padding:16px 45px;
-  background:#00ff9c;
-  color:#000;
-  font-weight:bold;
-  border-radius:35px;
-  transition:all .3s;
-}
-
-.cta:hover {
-  background:#1affb0;
-  transform:scale(1.05);
-  box-shadow:0 0 20px #00ff9c,0 0 40px #00ff9c;
-}
-
-.download-btn {
-  display:inline-block;
-  margin:25px 0;
-  padding:22px 55px;
-  background:#00e5ff;
-  color:#000;
-  font-weight:bold;
-  font-size:22px;
-  border-radius:35px;
-  transition:all .3s;
-}
-
-.download-btn:hover {
-  background:#1fffff;
-  transform:scale(1.05);
-  box-shadow:0 0 25px #00e5ff,0 0 50px #00e5ff;
-}
-
-.footer {
-  margin:60px 0 25px;
-  font-size:13px;
-  opacity:.6;
-}
 </style>
 </head>
+
 <body>
 
 <!-- فيديو الخلفية -->
@@ -134,36 +122,39 @@ p {font-size:18px; line-height:1.8; margin-bottom:20px; opacity:0.9;}
   Your browser does not support the video tag.
 </video>
 
+<div class="overlay"></div>
+
 <div class="container">
-<h1>🌐 Metaverse.World</h1>
-<p>Explore Gaming, AI, Web3, VR, and download our futuristic app!</p>
-<a class="download-btn" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">📱 Download App</a>
+<h1>Metaverse.World</h1>
+<p>Discover the future of Virtual Reality, AI Tools, 3D Games & Web3</p>
 
-<!-- ================= 10 ARTICLES ================= -->
-<div class="article">
-<h2>🎮 Gaming Article 1</h2>
-<p>Explore the latest games and earn exclusive bonuses in virtual worlds.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+1">
+<a class="btn" href="#">Download App</a>
+
+<div class="box">
+<h2>Earn & Explore 🚀</h2>
+<a class="btn" href="#">AI Tools</a>
+<a class="btn" href="#">Gaming Offers</a>
+<a class="btn" href="#">Bonuses</a>
 </div>
 
-<div class="article">
-<h2>🎮 Gaming Article 2</h2>
-<p>Discover advanced strategies to level up your gaming experience.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+2">
+<div class="box">
+<h2>Content Hub 📚🎥</h2>
+<a class="btn" href="#">Articles</a>
+<a class="btn" href="#">Videos</a>
 </div>
 
-<div class="article">
-<h2>🎮 Gaming Article 3</h2>
-<p>Join online tournaments and win rare in-game rewards.</p>
-<a class="cta" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">Play Now</a>
-<img src="https://via.placeholder.com/220x140?text=Game+3">
+<div class="ads-box">Advertisement / Sponsored</div>
+
+<div class="box">
+<h2>📩 Get Early Access</h2>
+<form>
+<input type="email" placeholder="Email" required><br>
+<input type="text" placeholder="WhatsApp"><br>
+<button class="submit">Notify Me</button>
+</form>
 </div>
 
-<!-- أضف باقي المقالات بنفس الطريقة -->
-
-<div class="footer">© 2026 Metaverse.World – All rights reserved</div>
+<div class="footer">© 2025 Metaverse.World</div>
 </div>
 
 </body>
