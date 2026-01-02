@@ -28,35 +28,31 @@ p{font-size:18px;line-height:1.8;margin-bottom:20px;opacity:.9;}
 .article img{max-width:220px;border-radius:20px;display:block;margin:15px auto;animation:float 5s ease-in-out infinite;}
 @keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-15px);}100%{transform:translateY(0);}}
 
+
 .cta{display:inline-block;margin-top:20px;padding:16px 45px;background:#00ff9c;color:#000;font-weight:bold;border-radius:35px;animation:pulse 1.5s infinite;transition:all .3s;}
 .cta:hover{background:#1affb0;transform:scale(1.05);box-shadow:0 0 20px #00ff9c,0 0 40px #00ff9c;}
 .download-btn{display:inline-block;margin:25px 0;padding:22px 55px;background:#00e5ff;color:#000;font-weight:bold;font-size:22px;border-radius:35px;animation:pulse 1.5s infinite;transition:all .3s;}
 .download-btn:hover{background:#1fffff;transform:scale(1.05);box-shadow:0 0 25px #00e5ff,0 0 50px #00e5ff;}
 @keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.08);}100%{transform:scale(1);}}
 
-.lang-toggle{position:fixed;top:15px;right:15px;background:#00e5ff;color:#000;padding:14px 22px;border-radius:25px;font-weight:bold;cursor:pointer;z-index:999;transition:all .3s;}
-.lang-toggle:hover{background:#1fffff;}
 .footer{margin:60px 0 25px;font-size:13px;opacity:.6;}
-.arabic,.french{display:none;}
 </style>
 </head>
 <body>
 
 <!-- فيديو الخلفية -->
-<video class="video-bg" autoplay muted loop playsinline>
+<video id="bgVideo" autoplay muted loop playsinline>
   <source src="video.mp4" type="video/mp4">
 </video>
 <div class="overlay"></div>
 <canvas id="particles"></canvas>
-
-<div class="lang-toggle" onclick="toggleLang()">EN / FR / AR</div>
 
 <div class="container english">
 <h1>🌐 Metaverse.World</h1>
 <p>Explore Gaming, AI, Web3, VR, and download our futuristic app!</p>
 <a class="download-btn" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">📱 Download App</a>
 
-<!-- ================= 10 ARTICLES مع روابط إعلانات ================= -->
+<!-- ================= 10 ARTICLES ================= -->
 <div class="article">
 <h2>🎮 Gaming Article 1</h2>
 <p>Explore the latest games and earn exclusive bonuses in virtual worlds.</p>
@@ -130,30 +126,7 @@ p{font-size:18px;line-height:1.8;margin-bottom:20px;opacity:.9;}
 <div class="footer">© 2026 Metaverse.World – All rights reserved</div>
 </div>
 
-<!-- ARABIC -->
-<div class="container arabic">
-<h1>🌐 ميتافيرس وورلد</h1>
-<p>استكشف الألعاب، الذكاء الاصطناعي، Web3، وحمّل تطبيقنا!</p>
-<a class="download-btn" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">📱 حمل التطبيق</a>
-</div>
-
-<!-- FRENCH -->
-<div class="container french">
-<h1>🌐 Metaverse.World</h1>
-<p>Découvrez Gaming, AI, Web3, VR, et téléchargez notre app!</p>
-<a class="download-btn" href="https://www.effectivegatecpm.com/gkng6051gd?key=e743705d000c279da657b133b53ee7ae" target="_blank">📱 Télécharger App</a>
-</div>
-
 <script>
-function toggleLang(){
-  const en=document.querySelector('.english');
-  const ar=document.querySelector('.arabic');
-  const fr=document.querySelector('.french');
-  if(en.style.display!=='block'){en.style.display='block';ar.style.display='none';fr.style.display='none';}
-  else if(ar.style.display!=='block'){en.style.display='none';ar.style.display='block';fr.style.display='none';}
-  else{en.style.display='none';ar.style.display='none';fr.style.display='block';}
-}
-
 // PARTICLES
 const canvas=document.getElementById('particles');
 const ctx=canvas.getContext('2d');
@@ -168,8 +141,4 @@ window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.heig
 </script>
 
 </body>
-</html>ذ
-
-
-
-
+</html>
