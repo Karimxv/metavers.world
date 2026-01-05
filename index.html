@@ -114,14 +114,9 @@ img{
   border-radius:12px;
   display:block;
   margin:15px auto;
-}
+
 </style>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
-  .then(() => console.log('Service Worker Registered'))
-  .catch((err) => console.log('SW Registration Failed', err));
-}
+
 </script>
 </head>
 <script>
@@ -182,6 +177,7 @@ if ('serviceWorker' in navigator) {
 
 </body>
 </html>
+
 
 
 
